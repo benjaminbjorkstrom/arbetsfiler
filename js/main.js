@@ -8,7 +8,8 @@
 const searchForm = document.getElementById("searchform");
 const searchInput = document.getElementById("search");
 const errorMessage = document.getElementById("error");
-
+const recipeSection = document.getElementById("recipe");
+const messageSection = document.getElementById("message");
 /**
  * Hämtar recept från DummyJSON API.
  * @param {string} searchPhrase - Det användare söker efter.
@@ -53,6 +54,7 @@ searchForm.addEventListener("submit", function (event) {
 
     // Visa sökfrasen i konsolen medan vi testar.
     console.log("Du söker efter:", searchPhrase);
+    console.log("TEST: Nu försöker vi hämta recept!");
 
     // Hämta recept från API:t.
     fetchRecipes(searchPhrase)
