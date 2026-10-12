@@ -53,4 +53,15 @@ searchForm.addEventListener("submit", function (event) {
 
     // Visa sökfrasen i konsolen medan vi testar.
     console.log("Du söker efter:", searchPhrase);
+
+    // Hämta recept från API:t.
+    fetchRecipes(searchPhrase)
+    .then(function (data) {
+        // Visa hela svaret i konsolen medan vi testar.
+        console.log("API-svar:", data);
+    })
+    .catch(function (error) {
+        // Visa eventuella fel i konsolen.
+        console.error("Ett fel uppstod:", error);
+    });
 });
