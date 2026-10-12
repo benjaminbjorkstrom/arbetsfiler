@@ -107,6 +107,10 @@ function displayRecipe(recipe) {
 searchForm.addEventListener("submit", async function (event) {
     // Förhindra att sidan laddas om när formuläret skickas.
     event.preventDefault();
+    errorMessage.textContent = "";
+    messageSection.textContent = "";
+    recipeSection.innerHTML = "";
+
 
     // Hämta sökfrasen och ta bort mellanslag i början och slutet.
     const searchPhrase = searchInput.value.trim();
@@ -117,10 +121,7 @@ searchForm.addEventListener("submit", async function (event) {
         return;
     }
 
-    // Ta bort gamla felmeddelanden och resultat.
-    errorMessage.textContent = "";
-    messageSection.textContent = "";
-    recipeSection.innerHTML = "";
+   
 
     // Försök hämta och visa receptet.
     try {
